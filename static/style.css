@@ -1,0 +1,605 @@
+/* Cloud Types and Matching Game CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baloo 2', cursive;
+    line-height: 1.6;
+    color: #333;
+    background: #4b90e2; /* Solid blue background */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Color scheme variables */
+:root {
+    --primary-blue: #4b90e2;      /* Your specified blue */
+    --dark-blue: #2a70c2;         /* Darker shade */
+    --darker-blue: #1a5599;       /* Even darker */
+    --darkest-blue: #0d3d7a;      /* Darkest blue */
+    --light-blue: #7aadea;        /* Lighter shade */
+    --lighter-blue: #a8c9f2;      /* Even lighter */
+    --lightest-blue: #d6e6fa;     /* Lightest blue */
+    --white: #ffffff;             /* Pure white */
+    --off-white: #f8fbff;         /* Slightly blue-tinted white */
+    --comprehension-blue: #3a6cb7; /* Different blue for Cloud Comprehension */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure header is centered properly */
+header {
+    text-align: center;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Update header text color for better contrast against blue background */
+header h1 {
+    color: white; /* White text for better contrast against blue background */
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 3.8rem;
+    margin-bottom: 5px;
+    text-shadow: 
+        -2px -2px 0 rgba(0, 0, 0, 0.2),  
+        2px -2px 0 rgba(0, 0, 0, 0.2),
+        -2px 2px 0 rgba(0, 0, 0, 0.2),
+        2px 2px 0 rgba(0, 0, 0, 0.2); /* Dark shadow for contrast */
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Update subheader for better contrast */
+header p {
+    color: white; /* White text for better contrast */
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Darker shadow for contrast */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Update the learn-more section for better contrast against blue background */
+.learn-more-section {
+    padding: 50px 0; /* Increased padding for larger size */
+    margin-top: 40px;
+    background-color: var(--comprehension-blue); /* Different shade of blue */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+/* Update the learn-more section heading for better contrast */
+.learn-more-section h2 {
+    text-align: center;
+    color: white; /* White text for better contrast */
+    margin-bottom: 40px; /* Increased margin for larger size */
+    font-size: 3rem; /* Larger font size */
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Darker shadow for contrast */
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px; /* Slightly larger gap */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px; /* Increased padding */
+}
+
+/* Simplify the bento grid items */
+.bento-item {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(13, 61, 122, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110px; /* Slightly taller */
+    border: 1px solid var(--lightest-blue);
+}
+
+.bento-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(13, 61, 122, 0.15);
+}
+
+.bento-item h3 {
+    margin: 0;
+    padding: 15px;
+    color: var(--white);
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Update the title text color for the first three bento items (cirrus, cirrostratus, cirrocumulus) */
+.bento-grid .bento-item:nth-child(-n+3) h3 {
+    color: var(--darkest-blue); /* Dark blue text instead of white */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); /* Light shadow for better readability */
+}
+
+/* Expanded content styling */
+.expanded-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(13, 61, 122, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--lightest-blue);
+}
+
+.expanded-content.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.expanded-header {
+    padding: 15px 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expanded-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Update the header text color for cirrus, cirrostratus, and cirrocumulus expanded cards */
+#cirrus-expand .expanded-header h3,
+#cirrostratus-expand .expanded-header h3,
+#cirrocumulus-expand .expanded-header h3 {
+    color: var(--darkest-blue); /* Dark blue text instead of white */
+}
+
+.close-expanded {
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.close-expanded:hover {
+    transform: scale(1.2);
+}
+
+.expanded-body {
+    padding: 20px;
+    max-height: calc(90vh - 70px); /* Header height + padding */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.expanded-image {
+    margin-bottom: 20px;
+}
+
+.expanded-image img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(13, 61, 122, 0.15);
+    border: 3px solid var(--white);
+}
+
+.expanded-text h4 {
+    color: var(--primary-blue);
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.expanded-text p {
+    margin: 0 0 15px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Overlay for when expanded content is shown */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(13, 61, 122, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cloud Comprehension Footer Image with Link */
+.comprehension-footer {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px; /* Adjust this to your preferred maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.image-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.image-link:hover {
+    transform: translateY(-5px);
+}
+
+/* Modern approach using aspect-ratio */
+.image-container {
+    width: 100%;
+    aspect-ratio: auto; /* This will use the image's natural aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+/* For browsers that don't support aspect-ratio */
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-link:hover .image-container {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.footer-caption {
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle indicator that the image is clickable */
+.image-link::after {
+    content: "↗";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-link:hover::after {
+    opacity: 1;
+}
+
+/* Updated Cloud Matching Game Styles */
+.game-section {
+    margin-top: 60px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-title {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.game-description {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.game-button {
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-family: 'Baloo 2', cursive;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(13, 61, 122, 0.2);
+}
+
+.game-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--darker-blue);
+}
+
+.game-button:active {
+    transform: translateY(1px);
+}
+
+.game-stats {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    gap: 15px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    perspective: 1000px; /* For 3D flip effect */
+}
+
+/* Fixed card styling */
+.game-card {
+    height: 150px;
+    background-color: transparent; /* Important: transparent background */
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.game-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.game-card.matched {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: pulse 1.5s infinite;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background-color: var(--primary-blue); /* Default background color */
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    font-family: 'Baloo 2', cursive;
+    z-index: 2;
+}
+
+.card-back {
+    background-color: white;
+    color: #333;
+    transform: rotateY(180deg);
+    font-size: 0.9rem;
+    overflow: auto;
+    font-family: 'Baloo 2', cursive;
+}
+
+.card-image {
+    width: 90%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.game-message {
+    grid-column: span 4;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-family: 'Baloo 2', cursive;
+}
+
+.celebration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+    50% { box-shadow: 0 0 25px rgba(255, 255, 255, 1); }
+    100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+}
+
+/* Japanese name styling */
+.japanese-name {
+    font-size: 0.9em;
+    color: #666;
+    display: block;
+    margin-top: 2px;
+}
+
+/* For the expanded content headers */
+.expanded-header .japanese-name {
+    font-size: 0.8em;
+    opacity: 0.8;
+    font-weight: normal;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+/* For the game cards */
+.card-back .japanese-name {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .expanded-body {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .expanded-image {
+        flex: 0 0 40%;
+        margin-bottom: 0;
+    }
+    
+    .expanded-text {
+        flex: 0 0 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .expanded-content {
+        width: 95%;
+    }
+    
+    .expanded-body {
+        flex-direction: column;
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .game-message {
+        grid-column: span 2;
+    }
+    
+    .game-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .game-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2.8rem;
+    }
+}
