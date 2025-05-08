@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Types and Matching Game</title>
+    
+    <!-- Google Fonts - Baloo 2 with multiple weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cloud Types and Matching Game</h1>
+            <p><i>Learn about different cloud types and test your knowledge</i></p>
+        </header>
+
+        <!-- Learn More Section -->
+        <div id="learn-more" class="learn-more-section">
+            <h2>Cloud Comprehension</h2>
+            
+            <div class="bento-grid">
+                <div class="bento-item high-clouds" data-expand="cirrus-expand">
+                    <h3>Cirrus</h3>
+                </div>
+                
+                <div class="bento-item high-clouds" data-expand="cirrostratus-expand">
+                    <h3>Cirrostratus</h3>
+                </div>
+                
+                <div class="bento-item high-clouds" data-expand="cirrocumulus-expand">
+                    <h3>Cirrocumulus</h3>
+                </div>
+                
+                <div class="bento-item mid-clouds" data-expand="altostratus-expand">
+                    <h3>Altostratus</h3>
+                </div>
+                
+                <div class="bento-item mid-clouds" data-expand="altocumulus-expand">
+                    <h3>Altocumulus</h3>
+                </div>
+                
+                <div class="bento-item low-clouds" data-expand="stratus-expand">
+                    <h3>Stratus</h3>
+                </div>
+                
+                <div class="bento-item low-clouds" data-expand="stratocumulus-expand">
+                    <h3>Stratocumulus</h3>
+                </div>
+                
+                <div class="bento-item low-clouds" data-expand="nimbostratus-expand">
+                    <h3>Nimbostratus</h3>
+                </div>
+                
+                <div class="bento-item vertical-clouds" data-expand="cumulus-expand">
+                    <h3>Cumulus</h3>
+                </div>
+                
+                <div class="bento-item vertical-clouds" data-expand="cumulonimbus-expand">
+                    <h3>Cumulonimbus</h3>
+                </div>
+            </div>
+            
+            <!-- Expanded content containers with Japanese names -->
+            <div id="cirrus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Cirrus <span class="japanese-name">巻雲 (Kōun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/cirrus.jpg" alt="Cirrus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Thin, wispy clouds made of ice crystals that look like delicate, feathery strands high in the sky.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>High clouds form above 18,000 feet (5,500 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Although they usually signify fair weather, sometimes it can be an indicator of an approaching weather front.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cirrostratus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Cirrostratus <span class="japanese-name">巻層雲 (Kōsōun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/cirrostratus.jpg" alt="Cirrostratus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Transparent, whitish cloud veil that often covers the entire sky. These clouds can create halos around the sun or moon.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>High clouds form above 18,000 feet (5,500 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Can signify the possibility of approaching precipitation within 24-36 hours.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cirrocumulus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Cirrocumulus <span class="japanese-name">巻積雲 (Kōsekiun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/cirrocumulus.jpg" alt="Cirrocumulus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Small, rounded white puffs that appear in long rows. They don't appear often so if you see it you are quite lucky! They create a rippled appearance sometimes called a "mackerel sky."</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>High clouds form above 18,000 feet (5,500 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Signifies fair but cold weather.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="altostratus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Altostratus <span class="japanese-name">高層雲 (Kōsōun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/altostratus.jpg" alt="Altostratus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Gray or blue-gray sheet-like clouds that cover the sky. The sun may be dimly visible through these clouds, creating a frosted glass effect.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Middle clouds form between 6,500 and 18,000 feet (2,000-5,500 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Is usually seen before a warm front and continuous precipitation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="altocumulus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Altocumulus <span class="japanese-name">高積雲 (Kōsekiun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/altocumulus.jpg" alt="Altocumulus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>White or gray patch-like clouds with a rolled appearance, often arranged in waves or bands. These clouds are composed of water droplets.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Middle clouds form between 6,500 and 18,000 feet (2,000-5,500 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Signifies instability in the atmosphere and potential thunderstorm development later in the day.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="stratus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Stratus <span class="japanese-name">層雲 (Sōun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/stratus.jpg" alt="Stratus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Gray cloud layer resembling fog that doesn't reach the ground. These clouds can produce drizzle or light snow.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Low clouds form below 6,500 feet (2,000 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Usually indicates overcast conditions with occasional light precipitation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="stratocumulus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Stratocumulus <span class="japanese-name">層積雲 (Sōsekiun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/stratocumulus.jpg" alt="Stratocumulus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Puffy white/gray clouds arranged in a low layer or patch with some spots of clear sky visible. One of the most common cloud types.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Low clouds form below 6,500 feet (2,000 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Signifies stable conditions with a small chance of light precipitation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="nimbostratus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Nimbostratus <span class="japanese-name">乱層雲 (Ransōun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/nimbostratus.jpg" alt="Nimbostratus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Dark gray cloud layer that usually covers the entire sky and produces constant rain or snow. These thick clouds often block out the sun completely.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Low to middle clouds, typically below 10,000 feet (3,000 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Usually signify continuous moderate to heavy precipitation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cumulus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Cumulus <span class="japanese-name">積雲 (Sekiun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/cumulus.jpg" alt="Cumulus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Fluffy clouds with flat bases and rounded tops, resembling a cotton ball. They form due to thermal convection.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Low to middle clouds, typically between 1,000-6,500 feet (300-2,000 meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Usually signify fair weather but it is possible that may grow vertically and develop into thunderstorms.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cumulonimbus-expand" class="expanded-content">
+                <div class="expanded-header">
+                    <h3>Cumulonimbus <span class="japanese-name">積乱雲 (Sekiranun)</span></h3>
+                    <span class="close-expanded">×</span>
+                </div>
+                <div class="expanded-body">
+                    <div class="expanded-image">
+                        <img src="images/clouds/cumulonimbus.jpg" alt="Cumulonimbus clouds">
+                    </div>
+                    <div class="expanded-text">
+                        <h4>Characteristics</h4>
+                        <p>Massive thunderstorm clouds with a dark base and tall, flat tops. These clouds often result in heavy rain, hail, lightning, and even tornadoes.</p>
+                        
+                        <h4>Altitude</h4>
+                        <p>Vertical development from low to high altitudes, typically from 1,000 feet up to 50,000+ feet (300-15,000+ meters).</p>
+                        
+                        <h4>Weather Indications</h4>
+                        <p>Usually signify severe weather, including heavy precipitation, lightning, strong winds, and sometimes hail or tornadoes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cloud Comprehension Footer Image with Link -->
+            <div class="comprehension-footer">
+                <a href="https://weathernews.jp/s/topics/202305/050195/" target="_blank" rel="noopener noreferrer" class="image-link">
+                    <div class="image-container">
+                        <img src="images/clouds/cloud-types-panorama.jpg" alt="Cloud Formation Panorama" class="footer-image">
+                    </div>
+                    <div class="footer-caption">The Ten Types of Clouds (Click to learn more)</div>
+                </a>
+            </div>
+            
+            <!-- Cloud Matching Game -->
+            <div class="game-section">
+                <h3 class="game-title">Cloud Matching Game</h3>
+                <p class="game-description">Match the cloud types with their descriptions. Click on a cloud card and then on its matching description.</p>
+                
+                <div class="game-controls">
+                    <button id="startGameBtn" class="game-button">Start New Game</button>
+                    <div class="game-stats">
+                        <span id="matchesMade">Matches: 0/8</span>
+                        <span id="gameTimer">Time: 0s</span>
+                    </div>
+                </div>
+                
+                <div id="gameBoard" class="game-board">
+                    <div class="game-message">Click "Start New Game" to begin!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for expanded content -->
+    <div class="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
